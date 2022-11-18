@@ -17,7 +17,7 @@ pyinstaller -F mainpdf.py
 cd [path of exe file]
 mainpdf.exe -path [path of pdf file] -name [name of pdf file]
 ```
-Note: the program will automatically create a Output folder in Desktop to store all files.
+
 ## Note
 
 This program will automaticlly create a folder on your Desktop and save all files there
