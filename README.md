@@ -1,5 +1,7 @@
 # PDF to PNG converter
 This python program help you easily convert pdf file to png image
+
+#This project is being rewriten for ease of use
 ## Installation
 
 ### Requirements
