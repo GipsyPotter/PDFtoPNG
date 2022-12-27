@@ -1,36 +1,35 @@
-import argparse
 import os
-
+from colorama import Fore, Back, Style
 import fitz  # pip install PyMuPDF
 
-parser = argparse.ArgumentParser(description="PDF to PNG convertor")
+print("PDF to PNG converter")
+pdffile = input("Enter PDF file path: ")
+namefile = input("Enter saving name of the file: ")
+zoom = input("Enter zoom level (1-10, Default is 2): ")
 
-parser.add_argument(
-    "-path",
-    type=str,
-    help="Your pdf file path"
-)
+if not zoom:
+    zoom = 2
+elif zoom > 10:
+    zoom = 10
+elif zoom < 1:
+    zoom = 1
 
-parser.add_argument(
-    "-name",
-    type=str,
-    help="Your image name"
-)
 
-arg = parser.parse_args()
+if ":" not in namefile:
+    save = f"C:\Desktop\\{namefile}\\"  # change the path to your desktop
+else:
+    save = f"{namefile}\\"
+os.makedirs(save)
 
-pdffile = arg.path
-namefile = arg.name
-os.makedirs(f"C:\Desktop\Output{namefile}")
-save = f'''C:\Desktop\Output{namefile}{chr(92)}'''
 doc = fitz.open(pdffile)
 i = 0
+mat = fitz.Matrix(zoom, zoom)
+
 for page in doc:  # Total number of pages
-    pix = page.get_pixmap()
-    output = f"{save}{namefile}{page.number}.png"  # Name and path of your saving folder
+    pix = page.getPixmap(matrix=mat)
+    output = f"{save}{namefile}_{page.number}.png"  # Name and path of your saving folder
     pix.save(output)
     print(f"Finish converting page {page.number}")
     i += 1
-print(f"Finished converting total {i}pages successfully")
 
-#Working on progress
+print(f"{Fore.GREEN}Finish converting{Fore.BLUE} {i} {Style.RESET_ALL}{Fore.GREEN}pages{Style.RESET_ALL}")

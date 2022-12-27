@@ -1,28 +1,26 @@
 # PDF to PNG converter
 This python program help you easily convert pdf file to png image
 
-#This project is being rewriten for ease of use
 ## Installation
 
 ### Requirements
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install required lib
 ```bash
-pip install argparse
+pip install PyMUPDF
+pip install colorama
 ```
 ### Usage
-1st step: use pyinstaller to pack the python file to exe file
+1 - Run the program
 ```bash
-pyinstaller -F mainpdf.py
+python mainpdf.py
 ```
-2nd step: use the exe file to convert pdf file to png image
-```bash
-cd [path of exe file]
-mainpdf.exe -path [path of pdf file] -name [name of pdf file]
-```
+2 - Enter the path of the pdf file
+
+3 - Enter the path of the folder where you want to save the images
 
 ## Note
 
-This program will automaticlly create a folder on your Desktop and save all files there
+This program will automatically create a folder on your Desktop and save all files there
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
