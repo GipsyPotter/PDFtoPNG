@@ -32,3 +32,5 @@ for page in doc:  # Total number of pages
     print(f"Finish converting page {page.number}")
     i += 1
 print(f"Finished converting total {i}pages successfully")
+
+#Working on progress
