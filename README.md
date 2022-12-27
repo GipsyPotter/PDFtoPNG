@@ -1,5 +1,6 @@
 # PDF to PNG converter
 This python program help you easily convert pdf file to png image
+[27/12/22]Finish rewritten and add some new features for easy use
 
 ## Installation
 
@@ -16,11 +17,10 @@ python mainpdf.py
 ```
 2 - Enter the path of the pdf file
 
-3 - Enter the path of the folder where you want to save the images
+3 - Enter the path of the folder where you want to save the images (if just name are entered, the images will be saved in the Desktop)
 
-## Note
+4 - Enter zoom level (1 = 100%, 2 = 200%, etc...), default is 2
 
-This program will automatically create a folder on your Desktop and save all files there
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
